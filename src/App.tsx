@@ -60,7 +60,7 @@ const HeroSection = () => {
       {/* Ambient Background Elements */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-primary/10 to-transparent filter blur-3xl"
+          className="absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 rounded-full bg-gradient-to-r from-primary/10 to-transparent filter blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.1, 0.2, 0.1],
@@ -70,7 +70,7 @@ const HeroSection = () => {
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-gradient-to-l from-accent/8 to-transparent filter blur-2xl"
+          className="absolute bottom-1/3 right-1/4 w-40 sm:w-56 md:w-64 lg:w-80 h-40 sm:h-56 md:h-64 lg:h-80 rounded-full bg-gradient-to-l from-accent/8 to-transparent filter blur-2xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.08, 0.15, 0.08],
@@ -84,7 +84,7 @@ const HeroSection = () => {
       {/* Floating Geometric Shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-20 left-10 w-24 h-24 border border-primary/15 rotate-45"
+          className="absolute top-20 left-4 sm:left-10 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 border border-primary/15 rotate-45"
           animate={{
             rotate: [45, 225, 45],
             scale: [1, 1.2, 1],
@@ -93,7 +93,7 @@ const HeroSection = () => {
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute top-40 right-20 w-20 h-20 bg-primary/8 rounded-full"
+          className="absolute top-40 right-8 sm:right-20 w-12 sm:w-16 md:w-20 h-12 sm:h-16 md:h-20 bg-primary/8 rounded-full"
           animate={{
             y: [0, -30, 0],
             opacity: [0.08, 0.2, 0.08],
@@ -102,7 +102,7 @@ const HeroSection = () => {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-40 left-1/4 w-16 h-16 border-2 border-primary/20 rounded-full"
+          className="absolute bottom-40 left-1/4 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 border-2 border-primary/20 rounded-full"
           animate={{
             scale: [1, 1.5, 1],
             rotate: [0, 180, 360],
@@ -114,13 +114,13 @@ const HeroSection = () => {
 
       {/* Main Hero Content */}
       <motion.div
-        className="relative z-10 flex flex-col items-center justify-center px-6 pt-32 pb-20 min-h-screen"
+        className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-20 min-h-screen"
         style={{ y: y1, opacity }}
       >
-        <div className="max-w-6xl mx-auto text-center space-y-8">
+        <div className="max-w-6xl mx-auto text-center space-y-6 sm:space-y-8">
           {/* Greeting Animation */}
           <motion.div
-            className="flex justify-center flex-wrap gap-3 mb-8"
+            className="flex justify-center flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
@@ -128,7 +128,7 @@ const HeroSection = () => {
             {["👋", "Hi,", "I", "am"].map((word, i) => (
               <motion.span
                 key={i}
-                className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-300 font-['Plus_Jakarta_Sans']"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-300 font-['Plus_Jakarta_Sans']"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 + i * 0.2, duration: 0.8, ease: "easeOut" }}
@@ -137,7 +137,7 @@ const HeroSection = () => {
               </motion.span>
             ))}
             <motion.span
-              className="font-bold text-4xl md:text-5xl lg:text-6xl font-['Plus_Jakarta_Sans']"
+              className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-['Plus_Jakarta_Sans']"
               style={{
                 background: "linear-gradient(135deg, #ffffff 0%, #A8FF60 50%, #ffffff 100%)",
                 backgroundClip: "text",
@@ -154,12 +154,12 @@ const HeroSection = () => {
 
           {/* Tagline */}
           <motion.div
-            className="text-2xl md:text-3xl lg:text-4xl font-medium text-gray-300 mb-12 font-['Plus_Jakarta_Sans'] tracking-wide"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-gray-300 mb-8 sm:mb-12 font-['Plus_Jakarta_Sans'] tracking-wide"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.6, duration: 0.8, ease: "easeOut" }}
           >
-            <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-5xl mx-auto">
               {['"Designing', 'Dashboards', 'with'].map((word, i) => (
                 <motion.span
                   key={i}
@@ -196,13 +196,13 @@ const HeroSection = () => {
 
           {/* SQL Code Block */}
           <motion.div
-            className="mb-16 mx-auto max-w-2xl"
+            className="mb-12 sm:mb-16 mx-auto max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-2xl"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 3.2, duration: 0.8, ease: "easeOut" }}
           >
             <motion.div
-              className="relative backdrop-blur-2xl bg-white/[0.02] border border-primary/20 rounded-3xl p-8 lg:p-10 shadow-2xl overflow-hidden"
+              className="relative backdrop-blur-2xl bg-white/[0.02] border border-primary/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-2xl overflow-hidden"
               whileHover={{
                 boxShadow: "0 25px 50px rgba(168,255,96,0.15), 0 0 0 1px rgba(168,255,96,0.3)",
                 borderColor: "rgba(168,255,96,0.4)",
@@ -224,20 +224,20 @@ const HeroSection = () => {
 
               <div className="relative">
                 {/* Terminal Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex space-x-3">
-                    <div className="w-3 h-3 bg-red-500 rounded-full" />
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-                    <div className="w-3 h-3 bg-green-500 rounded-full" />
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <div className="flex space-x-2 sm:space-x-3">
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full" />
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full" />
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full" />
                   </div>
-                  <span className="text-sm text-gray-400 font-mono">query.sql</span>
+                  <span className="text-xs sm:text-sm text-gray-400 font-mono">query.sql</span>
                 </div>
 
                 {/* Code Content */}
-                <pre className="text-left font-mono text-lg md:text-xl text-primary leading-relaxed whitespace-pre-wrap">
+                <pre className="text-left font-mono text-sm sm:text-base md:text-lg lg:text-xl text-primary leading-relaxed whitespace-pre-wrap break-words">
                   {sqlText}
                   <motion.span
-                    className="inline-block w-2 h-6 bg-primary ml-1"
+                    className="inline-block w-1 sm:w-2 h-4 sm:h-5 md:h-6 bg-primary ml-1"
                     animate={{ opacity: [1, 0, 1] }}
                     transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
                   />
@@ -248,7 +248,7 @@ const HeroSection = () => {
 
           {/* Description */}
           <motion.p
-            className="text-xl md:text-2xl text-gray-300 max-w-5xl mx-auto leading-relaxed font-['Plus_Jakarta_Sans'] mb-12"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-5xl mx-auto leading-relaxed font-['Plus_Jakarta_Sans'] mb-8 sm:mb-12 px-4"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 3.8, duration: 0.8, ease: "easeOut" }}
@@ -263,7 +263,7 @@ const HeroSection = () => {
           {/* CTA Button */}
           <motion.button
             onClick={handleScrollToProjects}
-            className="group relative px-12 py-5 bg-gradient-to-r from-primary to-accent text-black font-bold text-xl rounded-2xl overflow-hidden shadow-2xl font-['Plus_Jakarta_Sans']"
+            className="group relative px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-primary to-accent text-black font-bold text-base sm:text-lg md:text-xl rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl font-['Plus_Jakarta_Sans']"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 4.2, duration: 0.8, ease: "easeOut" }}
@@ -273,10 +273,10 @@ const HeroSection = () => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="relative z-10 flex items-center justify-center space-x-3">
+            <span className="relative z-10 flex items-center justify-center space-x-2 sm:space-x-3">
               <span>Explore My Work</span>
               <motion.svg
-                className="w-6 h-6"
+                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

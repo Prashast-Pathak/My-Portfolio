@@ -94,10 +94,10 @@ const Projects = () => {
   ];
 
   const categories = [
-    { id: 'all', name: 'All Projects', icon: <BarChart3 size={18} /> },
-    { id: 'analytics', name: 'Analytics', icon: <TrendingUp size={18} /> },
-    { id: 'business', name: 'Business', icon: <Zap size={18} /> },
-    { id: 'research', name: 'Research', icon: <Database size={18} /> },
+    { id: 'all', name: 'All Projects', icon: <BarChart3 size={16} className="sm:w-[18px] sm:h-[18px]" /> },
+    { id: 'analytics', name: 'Analytics', icon: <TrendingUp size={16} className="sm:w-[18px] sm:h-[18px]" /> },
+    { id: 'business', name: 'Business', icon: <Zap size={16} className="sm:w-[18px] sm:h-[18px]" /> },
+    { id: 'research', name: 'Research', icon: <Database size={16} className="sm:w-[18px] sm:h-[18px]" /> },
   ];
 
   const filteredProjects = filter === 'all' 
@@ -107,12 +107,12 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative py-28 px-6 bg-gradient-to-br from-black via-[#0a1a02] to-black overflow-hidden"
+      className="relative py-20 sm:py-24 md:py-28 px-4 sm:px-6 bg-gradient-to-br from-black via-[#0a1a02] to-black overflow-hidden"
     >
       {/* Ambient Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-primary/10 to-transparent filter blur-3xl"
+          className="absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 rounded-full bg-gradient-to-r from-primary/10 to-transparent filter blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.1, 0.2, 0.1],
@@ -122,7 +122,7 @@ const Projects = () => {
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-gradient-to-l from-accent/8 to-transparent filter blur-2xl"
+          className="absolute bottom-1/3 right-1/4 w-40 sm:w-56 md:w-64 lg:w-80 h-40 sm:h-56 md:h-64 lg:h-80 rounded-full bg-gradient-to-l from-accent/8 to-transparent filter blur-2xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.08, 0.15, 0.08],
@@ -137,22 +137,22 @@ const Projects = () => {
       <AnimatePresence>
         {lightbox.open && (
           <motion.div
-            className="fixed inset-0 z-[110] bg-black/95 backdrop-blur-sm flex items-center justify-center p-6"
+            className="fixed inset-0 z-[110] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeLightbox}
           >
             <motion.div
-              className="relative max-w-6xl max-h-[90vh] bg-black/50 backdrop-blur-xl border border-primary/30 rounded-3xl overflow-hidden"
+              className="relative max-w-6xl max-h-[90vh] bg-black/50 backdrop-blur-xl border border-primary/30 rounded-2xl sm:rounded-3xl overflow-hidden"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
-              <div className="p-6 border-b border-primary/20">
-                <h3 className="text-2xl font-bold text-white font-['Plus_Jakarta_Sans']">
+              <div className="p-4 sm:p-6 border-b border-primary/20">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-['Plus_Jakarta_Sans']">
                   {lightbox.title}
                 </h3>
               </div>
@@ -163,7 +163,7 @@ const Projects = () => {
               />
               <motion.button
                 onClick={closeLightbox}
-                className="absolute top-4 right-4 w-12 h-12 bg-black/80 hover:bg-primary/20 text-white hover:text-primary rounded-full flex items-center justify-center transition-all duration-300"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 w-10 h-10 sm:w-12 sm:h-12 bg-black/80 hover:bg-primary/20 text-white hover:text-primary rounded-full flex items-center justify-center transition-all duration-300 text-lg sm:text-xl"
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -177,14 +177,14 @@ const Projects = () => {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-16 sm:mb-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h2
-            className="text-6xl md:text-7xl font-extrabold font-['Plus_Jakarta_Sans'] mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-['Plus_Jakarta_Sans'] mb-4 sm:mb-6"
             style={{
               background: "linear-gradient(135deg, #A8FF60 0%, #ffffff 25%, #A8FF60 50%, #ffffff 75%, #A8FF60 100%)",
               backgroundSize: "300% 300%",
@@ -201,7 +201,7 @@ const Projects = () => {
           </motion.h2>
           
           <motion.div
-            className="h-1 w-32 mx-auto rounded-full bg-gradient-to-r from-primary via-accent to-primary mb-8"
+            className="h-1 w-24 sm:w-32 mx-auto rounded-full bg-gradient-to-r from-primary via-accent to-primary mb-6 sm:mb-8"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
@@ -209,7 +209,7 @@ const Projects = () => {
           />
           
           <motion.p
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-['Plus_Jakarta_Sans']"
+            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-['Plus_Jakarta_Sans'] px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -221,7 +221,7 @@ const Projects = () => {
 
         {/* Category Filter */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-16"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -231,7 +231,7 @@ const Projects = () => {
             <motion.button
               key={category.id}
               onClick={() => setFilter(category.id)}
-              className={`flex items-center space-x-2 px-6 py-3 rounded-2xl font-medium font-['Plus_Jakarta_Sans'] transition-all duration-300 ${
+              className={`flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl font-medium font-['Plus_Jakarta_Sans'] transition-all duration-300 text-sm sm:text-base ${
                 filter === category.id
                   ? 'bg-gradient-to-r from-primary to-accent text-black shadow-lg shadow-primary/25'
                   : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white backdrop-blur-xl border border-white/10'
@@ -250,7 +250,7 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8"
           layout
         >
           <AnimatePresence mode="wait">
@@ -292,7 +292,7 @@ const ProjectCard = ({
     <motion.div
       ref={ref}
       layout
-      className="group relative rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-2xl border border-primary/20 overflow-hidden shadow-2xl"
+      className="group relative rounded-2xl sm:rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-2xl border border-primary/20 overflow-hidden shadow-2xl"
       initial={{ opacity: 0, y: 60, scale: 0.9 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ 
@@ -324,7 +324,7 @@ const ProjectCard = ({
       />
 
       {/* Project Image */}
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
         <motion.img
           src={project.image}
           alt={project.title}
@@ -336,34 +336,34 @@ const ProjectCard = ({
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         
         {/* Action Buttons */}
-        <div className="absolute top-4 right-4 flex space-x-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex space-x-2 sm:space-x-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
           <motion.button
             onClick={onOpenLightbox}
-            className="p-3 bg-black/80 hover:bg-primary/20 text-white hover:text-primary rounded-full backdrop-blur-sm transition-all duration-300"
+            className="p-2 sm:p-3 bg-black/80 hover:bg-primary/20 text-white hover:text-primary rounded-full backdrop-blur-sm transition-all duration-300"
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.9 }}
           >
-            <Eye size={20} />
+            <Eye size={16} className="sm:w-5 sm:h-5" />
           </motion.button>
           <motion.a
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-black/80 hover:bg-primary/20 text-white hover:text-primary rounded-full backdrop-blur-sm transition-all duration-300"
+            className="p-2 sm:p-3 bg-black/80 hover:bg-primary/20 text-white hover:text-primary rounded-full backdrop-blur-sm transition-all duration-300"
             whileHover={{ scale: 1.1, rotate: -5 }}
             whileTap={{ scale: 0.9 }}
           >
-            <Github size={20} />
+            <Github size={16} className="sm:w-5 sm:h-5" />
           </motion.a>
         </div>
 
         {/* Metrics Badge */}
         {project.metrics && (
-          <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
+          <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 flex flex-wrap gap-1 sm:gap-2">
             {project.metrics.slice(0, 2).map((metric, idx) => (
               <motion.span
                 key={idx}
-                className="px-3 py-1 bg-black/80 text-primary text-xs font-bold rounded-full backdrop-blur-sm border border-primary/30"
+                className="px-2 sm:px-3 py-1 bg-black/80 text-primary text-xs font-bold rounded-full backdrop-blur-sm border border-primary/30"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5 + idx * 0.1 }}
@@ -376,28 +376,28 @@ const ProjectCard = ({
       </div>
 
       {/* Content */}
-      <div className="p-8">
+      <div className="p-6 sm:p-8">
         {/* Title and Category */}
-        <div className="flex items-start justify-between mb-4">
+        <div className="flex items-start justify-between mb-3 sm:mb-4">
           <div>
-            <h3 className="text-2xl font-bold text-white font-['Plus_Jakarta_Sans'] mb-2 group-hover:text-primary transition-colors duration-300">
+            <h3 className="text-xl sm:text-2xl font-bold text-white font-['Plus_Jakarta_Sans'] mb-2 group-hover:text-primary transition-colors duration-300">
               {project.title}
             </h3>
-            <span className="inline-block px-3 py-1 bg-primary/20 text-primary text-sm font-medium rounded-full border border-primary/30">
+            <span className="inline-block px-2 sm:px-3 py-1 bg-primary/20 text-primary text-xs sm:text-sm font-medium rounded-full border border-primary/30">
               {project.category}
             </span>
           </div>
         </div>
 
         {/* Description */}
-        <p className="text-gray-300 leading-relaxed mb-6 font-['Plus_Jakarta_Sans']">
+        <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 font-['Plus_Jakarta_Sans'] text-sm sm:text-base">
           {project.description}
         </p>
 
         {/* Expand/Collapse Button */}
         <motion.button
           onClick={onToggleExpand}
-          className="flex items-center space-x-2 text-primary hover:text-accent font-semibold mb-4 transition-colors duration-300"
+          className="flex items-center space-x-2 text-primary hover:text-accent font-semibold mb-3 sm:mb-4 transition-colors duration-300 text-sm sm:text-base"
           whileHover={{ x: 5 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -421,7 +421,7 @@ const ProjectCard = ({
               className="overflow-hidden"
             >
               <motion.p
-                className="text-gray-400 leading-relaxed mb-6 font-['Plus_Jakarta_Sans'] text-sm"
+                className="text-gray-400 leading-relaxed mb-4 sm:mb-6 font-['Plus_Jakarta_Sans'] text-xs sm:text-sm"
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.1 }}
@@ -432,7 +432,7 @@ const ProjectCard = ({
               {/* All Metrics */}
               {project.metrics && (
                 <motion.div
-                  className="flex flex-wrap gap-2 mb-6"
+                  className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6"
                   initial={{ y: -10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
@@ -440,7 +440,7 @@ const ProjectCard = ({
                   {project.metrics.map((metric, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full border border-primary/20"
+                      className="px-2 sm:px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full border border-primary/20"
                     >
                       {metric}
                     </span>
@@ -452,11 +452,11 @@ const ProjectCard = ({
         </AnimatePresence>
 
         {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1 sm:gap-2">
           {project.techStack.map((tech, idx) => (
             <motion.span
               key={idx}
-              className="px-4 py-2 bg-white/10 text-gray-300 text-sm font-medium rounded-xl border border-white/20 backdrop-blur-sm hover:bg-primary/20 hover:text-primary hover:border-primary/30 transition-all duration-300"
+              className="px-3 sm:px-4 py-1 sm:py-2 bg-white/10 text-gray-300 text-xs sm:text-sm font-medium rounded-lg sm:rounded-xl border border-white/20 backdrop-blur-sm hover:bg-primary/20 hover:text-primary hover:border-primary/30 transition-all duration-300"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6 + idx * 0.1 }}

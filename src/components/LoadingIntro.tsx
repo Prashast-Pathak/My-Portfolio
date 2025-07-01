@@ -23,12 +23,12 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
 
   // Refined tech icons for elegant floating animation
   const techIcons = [
-    { icon: <Database className="w-8 h-8" />, name: 'SQL', color: 'text-blue-400' },
-    { icon: <BarChart3 className="w-8 h-8" />, name: 'Power BI', color: 'text-yellow-400' },
-    { icon: <Code className="w-8 h-8" />, name: 'Python', color: 'text-green-400' },
-    { icon: <Zap className="w-8 h-8" />, name: 'Analytics', color: 'text-primary' },
-    { icon: <Brain className="w-8 h-8" />, name: 'AI/ML', color: 'text-purple-400' },
-    { icon: <Sparkles className="w-8 h-8" />, name: 'Insights', color: 'text-pink-400' },
+    { icon: <Database className="w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8" />, name: 'SQL', color: 'text-blue-400' },
+    { icon: <BarChart3 className="w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8" />, name: 'Power BI', color: 'text-yellow-400' },
+    { icon: <Code className="w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8" />, name: 'Python', color: 'text-green-400' },
+    { icon: <Zap className="w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8" />, name: 'Analytics', color: 'text-primary' },
+    { icon: <Brain className="w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8" />, name: 'AI/ML', color: 'text-purple-400' },
+    { icon: <Sparkles className="w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8" />, name: 'Insights', color: 'text-pink-400' },
   ];
 
   // Elegant typing animation effect
@@ -61,7 +61,7 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
     <AnimatePresence>
       {!fadingOut && (
         <motion.div
-          className="fixed inset-0 z-50 bg-gradient-to-br from-black via-[#0a1a02] to-black flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-50 bg-gradient-to-br from-black via-[#0a1a02] to-black flex items-center justify-center overflow-hidden px-4"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -76,10 +76,10 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
                   linear-gradient(rgba(168,255,96,0.2) 1px, transparent 1px),
                   linear-gradient(90deg, rgba(168,255,96,0.2) 1px, transparent 1px)
                 `,
-                backgroundSize: '80px 80px',
+                backgroundSize: '40px 40px',
               }}
               animate={{
-                backgroundPosition: ['0px 0px', '80px 80px'],
+                backgroundPosition: ['0px 0px', '40px 40px'],
               }}
               transition={{
                 duration: 20,
@@ -145,16 +145,16 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
           </div>
 
           {/* Central Content with Perfect Sizing */}
-          <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
+          <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6">
             {/* Main Loading Text Container */}
             <motion.div
-              className="mb-16"
+              className="mb-12 sm:mb-16"
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
             >
               <motion.div
-                className="relative p-12 lg:p-14 rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-2xl border border-primary/30 shadow-2xl overflow-hidden"
+                className="relative p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-2xl border border-primary/30 shadow-2xl overflow-hidden"
                 animate={{
                   boxShadow: [
                     "0 20px 40px rgba(168,255,96,0.2), 0 0 0 1px rgba(168,255,96,0.3)",
@@ -207,17 +207,17 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
                         ease: "easeInOut"
                       }}
                     >
-                      <Sparkles className="w-3 h-3 text-primary" />
+                      <Sparkles className="w-2 sm:w-3 h-2 sm:h-3 text-primary" />
                     </motion.div>
                   ))}
                 </div>
 
                 <div className="relative">
                   {/* Refined Terminal Header */}
-                  <div className="flex items-center justify-between mb-12">
-                    <div className="flex space-x-3">
+                  <div className="flex items-center justify-between mb-8 sm:mb-12">
+                    <div className="flex space-x-2 sm:space-x-3">
                       <motion.div 
-                        className="w-4 h-4 bg-red-500 rounded-full"
+                        className="w-3 sm:w-4 h-3 sm:h-4 bg-red-500 rounded-full"
                         animate={{ 
                           opacity: [0.6, 1, 0.6],
                           boxShadow: [
@@ -229,7 +229,7 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                       />
                       <motion.div 
-                        className="w-4 h-4 bg-yellow-500 rounded-full"
+                        className="w-3 sm:w-4 h-3 sm:h-4 bg-yellow-500 rounded-full"
                         animate={{ 
                           opacity: [0.6, 1, 0.6],
                           boxShadow: [
@@ -241,7 +241,7 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
                       />
                       <motion.div 
-                        className="w-4 h-4 bg-green-500 rounded-full"
+                        className="w-3 sm:w-4 h-3 sm:h-4 bg-green-500 rounded-full"
                         animate={{ 
                           opacity: [0.6, 1, 0.6],
                           boxShadow: [
@@ -254,7 +254,7 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
                       />
                     </div>
                     <motion.span 
-                      className="text-sm text-gray-400 font-mono tracking-wider"
+                      className="text-xs sm:text-sm text-gray-400 font-mono tracking-wider"
                       animate={{ opacity: [0.5, 1, 0.5] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     >
@@ -262,13 +262,13 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
                     </motion.span>
                   </div>
                   
-                  {/* Perfect Typography Layout - Reduced Sizes */}
-                  <div className="text-center space-y-4">
+                  {/* Perfect Typography Layout - Mobile Responsive */}
+                  <div className="text-center space-y-3 sm:space-y-4">
                     {/* Main Title - Single Line, Elegant Lime Color */}
                     <motion.h1
-                      className="font-['Plus_Jakarta_Sans'] font-bold tracking-wide text-primary whitespace-nowrap"
+                      className="font-['Plus_Jakarta_Sans'] font-bold tracking-wide text-primary whitespace-nowrap overflow-hidden"
                       style={{
-                        fontSize: "clamp(1.8rem, 5vw, 3.2rem)",
+                        fontSize: "clamp(1.2rem, 4vw, 3.2rem)",
                         lineHeight: "1.1",
                         textShadow: "0 0 25px rgba(168,255,96,0.8), 0 0 50px rgba(168,255,96,0.4)",
                       }}
@@ -294,7 +294,7 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
                         <motion.p
                           className="font-['Plus_Jakarta_Sans'] font-medium tracking-wide text-white"
                           style={{
-                            fontSize: "clamp(1.1rem, 3vw, 2rem)",
+                            fontSize: "clamp(0.9rem, 2.5vw, 2rem)",
                             lineHeight: "1.2",
                             textShadow: "0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4)",
                           }}
@@ -325,12 +325,12 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
 
             {/* Refined Progress Bar */}
             <motion.div
-              className="w-full max-w-lg mx-auto mb-12"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-lg mx-auto mb-8 sm:mb-12"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8, duration: 1 }}
             >
-              <div className="relative h-3 bg-white/10 rounded-full overflow-hidden backdrop-blur-sm border border-primary/25">
+              <div className="relative h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden backdrop-blur-sm border border-primary/25">
                 <motion.div
                   className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary via-accent to-primary rounded-full"
                   style={{ width: `${progress}%` }}
@@ -350,14 +350,14 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
                 />
               </div>
               <motion.div
-                className="flex justify-between items-center mt-4"
+                className="flex justify-between items-center mt-3 sm:mt-4"
                 animate={{ opacity: [0.6, 1, 0.6] }}
                 transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
               >
-                <p className="text-primary font-mono text-sm font-medium tracking-wider">
+                <p className="text-primary font-mono text-xs sm:text-sm font-medium tracking-wider">
                   Initializing...
                 </p>
-                <p className="text-primary font-mono text-sm font-bold">
+                <p className="text-primary font-mono text-xs sm:text-sm font-bold">
                   {Math.round(progress)}%
                 </p>
               </motion.div>
@@ -365,7 +365,7 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
 
             {/* Refined Loading Dots */}
             <motion.div
-              className="flex justify-center space-x-4 mb-12"
+              className="flex justify-center space-x-3 sm:space-x-4 mb-8 sm:mb-12"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.8 }}
@@ -373,7 +373,7 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
               {[0, 1, 2, 3, 4].map((index) => (
                 <motion.div
                   key={index}
-                  className="w-3 h-3 bg-primary rounded-full"
+                  className="w-2 sm:w-3 h-2 sm:h-3 bg-primary rounded-full"
                   animate={{
                     scale: [1, 1.6, 1],
                     opacity: [0.4, 1, 0.4],
@@ -395,7 +395,7 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
 
             {/* Elegant Subtitle */}
             <motion.p
-              className="text-gray-300 text-lg md:text-xl font-['Plus_Jakarta_Sans'] max-w-3xl mx-auto leading-relaxed"
+              className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl font-['Plus_Jakarta_Sans'] max-w-3xl mx-auto leading-relaxed px-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.8, duration: 1.2 }}
@@ -409,7 +409,7 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
 
           {/* Refined Ambient Orbs */}
           <motion.div
-            className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-primary/15 to-transparent filter blur-3xl"
+            className="absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 rounded-full bg-gradient-to-r from-primary/15 to-transparent filter blur-3xl"
             animate={{
               scale: [1, 1.3, 1],
               opacity: [0.15, 0.25, 0.15],
@@ -419,7 +419,7 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
             transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gradient-to-l from-accent/12 to-transparent filter blur-2xl"
+            className="absolute bottom-1/4 right-1/4 w-40 sm:w-56 md:w-64 lg:w-80 h-40 sm:h-56 md:h-64 lg:h-80 rounded-full bg-gradient-to-l from-accent/12 to-transparent filter blur-2xl"
             animate={{
               scale: [1, 1.4, 1],
               opacity: [0.12, 0.2, 0.12],
@@ -429,7 +429,7 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
             transition={{ duration: 24, repeat: Infinity, ease: "easeInOut", delay: 8 }}
           />
           <motion.div
-            className="absolute top-1/2 right-1/3 w-64 h-64 rounded-full bg-gradient-to-br from-purple-500/10 to-transparent filter blur-2xl"
+            className="absolute top-1/2 right-1/3 w-32 sm:w-48 md:w-56 lg:w-64 h-32 sm:h-48 md:h-56 lg:h-64 rounded-full bg-gradient-to-br from-purple-500/10 to-transparent filter blur-2xl"
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.1, 0.18, 0.1],
