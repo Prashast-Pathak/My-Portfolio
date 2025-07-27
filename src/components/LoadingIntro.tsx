@@ -16,8 +16,8 @@ const LoadingIntro: React.FC<LoadingIntroProps> = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
 
   // Enhanced text with proper formatting
-  const titleText = 'Welcome to the Dataverse';
-  const subtitleText = 'Curated, calculated, cinematic.';
+  const titleText = 'Data Solutions That Drive Growth';
+  const subtitleText = 'Professional • Reliable • Results-Focused';
   const fullText = `${titleText}\n${subtitleText}`;
   const typingSpeed = 50;
 
