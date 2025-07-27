@@ -47,10 +47,10 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '#', id: 'home', icon: <Home size={18} /> },
-    { name: 'Projects', href: '#projects', id: 'projects', icon: <Briefcase size={18} /> },
     { name: 'About', href: '#about', id: 'about', icon: <User size={18} /> },
-    { name: 'Experience', href: '#experience', id: 'experience', icon: <Award size={18} /> },
-    { name: 'Education', href: '#education', id: 'education', icon: <GraduationCap size={18} /> },
+    { name: 'Services', href: '#services', id: 'services', icon: <Briefcase size={18} /> },
+    { name: 'Work', href: '#projects', id: 'projects', icon: <Award size={18} /> },
+    { name: 'Pricing', href: '#pricing', id: 'pricing', icon: <GraduationCap size={18} /> },
     { name: 'Contact', href: '#contact', id: 'contact', icon: <Mail size={18} /> },
   ];
 
