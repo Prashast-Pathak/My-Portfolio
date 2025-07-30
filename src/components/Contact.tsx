@@ -269,7 +269,13 @@ const Contact = () => {
 
               <div className="relative z-10">
                 <h3 className="text-4xl font-bold text-white mb-10 font-['Plus_Jakarta_Sans'] flex items-center space-x-4">
-                  <span>Let's Build Something Together</span>
+                  <motion.div
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <MessageCircle className="text-primary" size={36} />
+                  </motion.div>
+                  <span>Send a Message</span>
                 </h3>
 
                 <AnimatePresence mode="wait">
@@ -434,7 +440,7 @@ const Contact = () => {
                               exit={{ opacity: 0 }}
                             >
                               <Send className="w-7 h-7" />
-                              <span>Start My Project</span>
+                              <span>Send Message</span>
                             </motion.div>
                           )}
                         </AnimatePresence>
@@ -465,7 +471,7 @@ const Contact = () => {
               transition={{ duration: 0.4 }}
             >
               <h3 className="text-4xl font-bold text-white mb-10 font-['Plus_Jakarta_Sans']">
-                Ready to Work Together?
+                Get In Touch
               </h3>
               <div className="space-y-8">
                 {contactInfo.map((info, index) => (
@@ -505,7 +511,7 @@ const Contact = () => {
               transition={{ duration: 0.4 }}
             >
               <h3 className="text-4xl font-bold text-white mb-10 font-['Plus_Jakarta_Sans']">
-                Let's Connect
+                Connect With Me
               </h3>
               <div className="grid grid-cols-1 gap-6">
                 {socialLinks.map((link, index) => (
